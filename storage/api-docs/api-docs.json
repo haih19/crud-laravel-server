@@ -1,10 +1,10 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "My API",
+        "title": "CRUD Laravel API Documentation",
         "description": "API description",
         "contact": {
-            "email": "contact@myapi.com"
+            "email": "haih19c@gmail.com"
         },
         "license": {
             "name": "MIT",

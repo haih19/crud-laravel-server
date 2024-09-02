@@ -9,11 +9,11 @@ use Illuminate\Routing\Controller as BaseController;
 
 /**
  * @OA\Info(
- *     title="My API",
+ *     title="CRUD Laravel API Documentation",
  *     version="1.0.0",
  *     description="API description",
  *     @OA\Contact(
- *         email="contact@myapi.com"
+ *         email="haih19c@gmail.com",
  *     ),
  *     @OA\License(
  *         name="MIT",
