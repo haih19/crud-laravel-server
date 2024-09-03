@@ -31,7 +31,7 @@
                         }
                     },
                     {
-                        "name": "page_size",
+                        "name": "pageSize",
                         "in": "query",
                         "description": "Number of items per page",
                         "required": false,
@@ -40,7 +40,7 @@
                         }
                     },
                     {
-                        "name": "page_numb",
+                        "name": "pageNumb",
                         "in": "query",
                         "description": "Page number",
                         "required": false,
@@ -242,6 +242,10 @@
                     },
                     "email": {
                         "type": "string"
+                    },
+                    "age": {
+                        "type": "integer",
+                        "format": "int64"
                     },
                     "created_at": {
                         "type": "string",

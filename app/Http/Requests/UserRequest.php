@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\MinAge;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest
@@ -23,18 +24,19 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
-        $id = $this->route('user'); // Lấy ID người dùng từ route
+        $id = $this->route('user');
         $rules = [
             'name' => 'required|min:6',
             'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'required|min:8'
+            'password' => 'required|min:8',
+            'age' => ['required', 'integer', new MinAge(18)],
         ];
 
-        // Nếu ID tồn tại, nghĩa là đang cập nhật người dùng
         if ($id) {
             $rules['name'] = 'sometimes|min:6';
             $rules['email'] = 'sometimes|email|unique:users,email,' . $id;
             $rules['password'] = 'sometimes|min:8';
+            $rules['age'] = ['sometimes', 'integer', new MinAge(18)];
         }
 
         return $rules;
@@ -51,7 +53,8 @@ class UserRequest extends FormRequest
             'required' => ':attribute is required.',
             'min' => ':attribute must be at least :min characters.',
             'email' => ':attribute must be a valid email address.',
-            'unique' => ':attribute has already been taken.'
+            'unique' => ':attribute has already been taken.',
+            'min_age' => ':attribute must be at least :min years old.'
         ];
     }
 
@@ -65,7 +68,8 @@ class UserRequest extends FormRequest
         return [
             'name' => 'Name',
             'email' => 'Email',
-            'password' => 'Password'
+            'password' => 'Password',
+            'age' => 'Age',
         ];
     }
 }

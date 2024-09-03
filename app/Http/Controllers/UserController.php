@@ -14,6 +14,7 @@ use OpenApi\Annotations as OA;
  *     @OA\Property(property="id", type="integer", format="int64"),
  *     @OA\Property(property="name", type="string"),
  *     @OA\Property(property="email", type="string"),
+ *     @OA\Property(property="age", type="integer", format="int64"),
  *     @OA\Property(property="created_at", type="string", format="date-time"),
  *     @OA\Property(property="updated_at", type="string", format="date-time")
  * )
@@ -34,14 +35,14 @@ class UserController extends Controller
      *         @OA\Schema(type="string")
      *     ),
      *     @OA\Parameter(
-     *         name="page_size",
+     *         name="pageSize",
      *         in="query",
      *         required=false,
      *         description="Number of items per page",
      *         @OA\Schema(type="integer")
      *     ),
      *     @OA\Parameter(
-     *         name="page_numb",
+     *         name="pageNumb",
      *         in="query",
      *         required=false,
      *         description="Page number",
@@ -62,8 +63,8 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
-        $page_size = $request->input('page_size', 10);
-        $page_numb = $request->input('page_numb', 1);
+        $page_size = $request->input('pageSize', 10);
+        $page_numb = $request->input('pageNumb', 1);
 
         $users = User::query();
 
@@ -202,6 +203,10 @@ class UserController extends Controller
 
         if ($request->password) {
             $user->password = bcrypt($request->password);
+        }
+
+        if ($request->age) {
+            $user->age = $request->age;
         }
 
         $user->save();
