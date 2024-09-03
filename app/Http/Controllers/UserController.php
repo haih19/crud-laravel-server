@@ -27,6 +27,7 @@ class UserController extends Controller
      *     path="/api/users",
      *     summary="Get list of users",
      *     tags={"User"},
+     *     operationId="getUsers",
      *     @OA\Parameter(
      *         name="search",
      *         in="query",
@@ -85,6 +86,7 @@ class UserController extends Controller
      *     path="/api/users",
      *     summary="Create a new user",
      *     tags={"User"},
+     *     operationId="createUser",
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(ref="#/components/schemas/User")
@@ -117,6 +119,7 @@ class UserController extends Controller
      *     path="/api/users/{id}",
      *     summary="Get a specific user",
      *     tags={"User"},
+     *     operationId="getUserById",
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -159,6 +162,7 @@ class UserController extends Controller
      *     path="/api/users/{id}",
      *     summary="Update a user",
      *     tags={"User"},
+     *     operationId="updateUser",
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -222,6 +226,7 @@ class UserController extends Controller
      *     path="/api/users/{id}",
      *     summary="Delete a user",
      *     tags={"User"},
+     *     operationId="deleteUser",
      *     @OA\Parameter(
      *         name="id",
      *         in="path",

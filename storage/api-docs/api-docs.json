@@ -19,7 +19,7 @@
                     "User"
                 ],
                 "summary": "Get list of users",
-                "operationId": "c457726701591d1183b53aa71fc13441",
+                "operationId": "getUsers",
                 "parameters": [
                     {
                         "name": "search",
@@ -81,7 +81,7 @@
                     "User"
                 ],
                 "summary": "Create a new user",
-                "operationId": "592819a0265360b2014512d6dbfaf0e7",
+                "operationId": "createUser",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -112,7 +112,7 @@
                     "User"
                 ],
                 "summary": "Get a specific user",
-                "operationId": "36a33ff774d5cba33c039dec2c3e0287",
+                "operationId": "getUserById",
                 "parameters": [
                     {
                         "name": "id",
@@ -145,7 +145,7 @@
                     "User"
                 ],
                 "summary": "Update a user",
-                "operationId": "b9091397c8b25f12c6adb74be6ce3a5a",
+                "operationId": "updateUser",
                 "parameters": [
                     {
                         "name": "id",
@@ -188,7 +188,7 @@
                     "User"
                 ],
                 "summary": "Delete a user",
-                "operationId": "fa56cffde745d3f152f95cbacd936c0b",
+                "operationId": "deleteUser",
                 "parameters": [
                     {
                         "name": "id",
